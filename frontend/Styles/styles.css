@@ -5,3 +5,13 @@ font-family: "Bebas Neue", sans-serif;
 font-family: "Inter", sans-serif;
 
 */
+
+:root {
+    --white: #FFFFFF;
+    --neon-green: #A0FF00;
+    --red: #FF3333;
+    --dark-blue-background-color: #000002;
+    --midnight-secondary-background-color: #1B1F23;
+    --dark-navy-blue: #0D0E1F;
+
+} 
