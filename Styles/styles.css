@@ -15,13 +15,44 @@ font-family: "Inter", sans-serif;
     --dark-navy-blue: #0D0E1F; 
 } 
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Inter", sans-serif;
     background-color: var(--dark-blue-background-color);
     color: var(--white);
+    padding: 0 5rem;
+    height: 100vh;
+}
+/* header */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 1rem 0 1rem;
 }
 
-/* Navigation */
+/* ---BACKGROUND IMAGE START---*/
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/Supercard-League/Assets/desktop-1920-x-1080.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+/* ---BACKGROUND IMAGE END--- */
+
+/* ---NAV BAR START--- */
 
 ul {
     list-style-type: none;
@@ -60,4 +91,211 @@ ul li a:after {
 ul li a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+.hidden {
+    display: none;
+}
+
+.hamburger{
+    display: none;
+}
+
+.nav-bar {
+    display: flex;
+}
+
+/* ---NAV BAR END--- */
+
+/* ----MAIN SECTION START---- */
+.welcome {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* border: 3px solid blue; */
+    width: 40%;
+    height: auto;
+    padding: 1rem;
+    margin-top: 5rem;
+}
+
+h1 {
+    font-size: 5rem;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.2rem;
+    line-height: 5rem;
+}
+
+h1 span {
+    color: var(--neon-green);
+}
+
+.welcome p {
+    font-size: 1.2rem;
+}
+
+.get-started {
+    background-color: var(--neon-green);
+    width: 10rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+    cursor: pointer;
+} 
+
+.explore {
+    border: 2px solid var(--neon-green);   
+    border-radius: 0.5rem;
+    color: var(--neon-green);
+    background-color: var(--dark-blue-background-color); 
+    width: 10rem;
+    height: 3rem;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.explore:hover {
+    background-color: var(--neon-green);
+    border: none;
+    color: var(--dark-navy-blue);
+}
+/* ----MAIN SECTION END---- */
+
+/*--- MOBILE VERSION ---*/
+@media (max-width: 768px) {
+
+    body {
+        padding: 0 1rem;
+    }
+
+    .background {
+        background-image: url(/Supercard-League/Assets/mobile-430-x-500.jpg);
+       
+    }
+
+    /* ---HEADER START---*/
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1rem 1rem 0 0;
+    }
+ /* ---HEADER END---*/
+
+  /* ---HAMBURGER MENU START---*/
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+        flex-direction: column;
+        align-items: flex-end;
+        /* margin: 1rem 0 ; */
+        gap: 0.3rem; 
+        position: absolute;
+        top: 1.7rem;
+        right: 1rem;
+        z-index: 1100;
+        width: fit-content;
+    }
+    
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 5px;
+        background-color: var(--neon-green);
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(10px);
+        background-color: var(--red);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-10px);
+        background-color: var(--red);
+    }
+
+   .hidden {
+    display: flex;
+    flex-direction: column;
+   }
+   
+   .nav-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+    background-color: var(--dark-navy-blue);
+    min-height: 100vh;
+    padding: 70px 20px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-menu.active {
+    display: flex;
+}
+
+   .nav-bar{
+    display: none;
+   }
+
+   /* ---HAMBURGER MENU END---*/
+
+   /* ---WELCOME SECTION START---*/
+   .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    /* border: 3px solid blue; */
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    margin-top: 3rem;
+   }
+
+   h1 {
+    font-size: 5rem;
+    text-align: center;
+    
+    }
+
+    .welcome p {
+        font-size: 1rem;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .get-started {
+        width: 100%;
+        height: 3rem;
+    }
+
+    .explore {
+
+    }
+
+   /* ---WELCOME SECTION END---*/
 }
